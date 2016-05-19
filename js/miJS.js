@@ -47,3 +47,11 @@ var changeValue = function(){
     document.getElementById("change").value = "He cambiado";
 
 }
+
+
+var enviar = function(){
+    var valor1=document.getElementById("nombre").value;
+     document.getElementById("nombre").value ="";
+    document.getElementById("responder").value = valor1;
+
+}
