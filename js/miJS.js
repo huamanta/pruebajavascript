@@ -55,3 +55,23 @@ var enviar = function(){
     document.getElementById("responder").value = valor1;
 
 }
+
+//trafajando con objeto JSON..>
+
+var objetjson = function(){
+    var persona = '{"nombres" : "juan", "apellidos":"torre garcia", "pais": "Inglaterra", "edad":37}';
+    //JSON.parse(persona) aqui un JSON convierto a un documento javascript
+    var objetoJSON = JSON.parse(persona);
+    alert(objetoJSON.apellidos);
+}
+//serializacion a un objeto JSON
+
+var serializacionJSON = function(){
+        var datos = new Object();
+        datos.nombres = "pepe lucho";
+        datos.edad = 83;
+        datos.ojos = "blanos";
+
+        var jsonserial = JSON.stringify(datos);
+        alert("los datos son: "+jsonserial);
+    }
