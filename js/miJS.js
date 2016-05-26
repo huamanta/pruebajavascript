@@ -64,8 +64,10 @@ var objetjson = function(){
     var objetoJSON = JSON.parse(persona);
     alert(objetoJSON.apellidos);
 }
-//serializacion a un objeto JSON
 
+
+
+//serializacion a un objeto JSON
 var serializacionJSON = function(){
         var datos = new Object();
         datos.nombres = "pepe lucho";
@@ -75,3 +77,71 @@ var serializacionJSON = function(){
         var jsonserial = JSON.stringify(datos);
         alert("los datos son: "+jsonserial);
     }
+
+//USANDO PRONT()
+//var nombr = prompt("escribe tu nombre");
+//alert(nombr);
+
+//UNA FUNCION COSTRUCTOR
+
+function persona(){
+    this.nombres="";
+    this.apellidos="";
+
+    this.setNombres = function(nombres){
+        this.nombres = nombres;
+
+    }
+
+    this.getNombres = function(){
+        return this.nombres;
+
+    }
+
+    this.setApellidos = function(apellidos){
+        this.apellidos = apellidos;
+
+    }
+    this.getApellidos = function(){
+        return this.apellidos;
+
+    }
+}
+
+Alumno.prototype = new persona();
+
+function Alumno(){
+    this.codigo="";
+    this.universidad="";
+
+    this.setCodigo = function(codigo){
+        this.codigo = codigo;
+
+    }
+    this.getCodigo = function(){
+       return this.codigo;
+
+    }
+
+     this.setUiversidad = function(universidad){
+        this.universidad = universidad;
+
+    }
+    this.getUiversidad = function(){
+       return this.universidad;
+
+    }
+
+}
+
+var miAlumno = new Alumno();
+miAlumno.setNombres("Alis");
+miAlumno.setApellidos("Huamanta");
+miAlumno.setCodigo("201420581");
+miAlumno.setUiversidad("Universidad Peruana Union")
+
+var texto = "el alumno: "+miAlumno.getNombres()+" "+miAlumno.getApellidos()+"\ncon codigo: "+miAlumno.getCodigo()+"\nDe la: "+miAlumno.getUiversidad()
+
+alert(texto)
+
+
